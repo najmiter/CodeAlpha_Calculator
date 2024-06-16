@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="./style.css" rel="stylesheet" />
+    </head>
+    <body class="dark:bg-slate-950 dark:text-slate-50">
+        <main class="flex sm:px-40 sm:py-20 p-3">
+            <!-- Calculator -->
+            <div
+                class="max-w-lg border border-white rounded-md p-2 flex flex-col gap-5"
+            >
+                <header>
+                    <div class="flex gap-3 justify-center items-center">
+                        <h1
+                            class="rounded py-2 px-10 data-[active]:bg-blue-600 font-semibold cursor-pointer"
+                            data-active="true"
+                        >
+                            Calculator
+                        </h1>
+                        <h1
+                            class="rounded py-2 px-10 data-[active]:bg-blue-600 data-[active]:font-semibold cursor-pointer"
+                        >
+                            Converter
+                        </h1>
+                    </div>
+                </header>
+                <!-- Screen -->
+                <div class="flex flex-col items-end">
+                    <div
+                        class="flex items-center gap-1 rounded-full bg-slate-700/80 py-1 px-3 font-light"
+                    >
+                        <img src="./imgs/recent.svg" alt="" />
+                        <p>123</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
