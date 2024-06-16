@@ -48,11 +48,12 @@
                         <img src="./src/imgs/recent.svg" alt="" />
                         <p>123</p>
                     </div>
-                    <div>
-                        <p class="text-4xl my-5">12,234</p>
+                    <div class="max-w-full">
+                        <p class="text-4xl my-5 max-w-full" id="result">0</p>
                     </div>
                     <div class="w-full">
                         <input
+                            autocomplete="off"
                             id="input"
                             type="text"
                             class="w-full rounded-sm bg-slate-600/20 py-3 px-1 outline-none border-none text-right"
@@ -60,26 +61,44 @@
                     </div>
                 </div>
                 <!-- Buttons -->
-                <div class="grid gap-1 grid-cols-4 rounded-lg overflow-hidden">
-                    <button class="button bg-slate-500/40">AC</button>
-                    <button class="button bg-slate-500/40">+/-</button>
-                    <button class="button bg-slate-500/40">%</button>
-                    <button class="button button-gradient">&div;</button>
-                    <button class="button">7</button>
-                    <button class="button">8</button>
-                    <button class="button">9</button>
-                    <button class="button button-gradient">&times;</button>
-                    <button class="button">4</button>
-                    <button class="button">5</button>
-                    <button class="button">6</button>
-                    <button class="button button-gradient">&dash;</button>
-                    <button class="button">1</button>
-                    <button class="button">2</button>
-                    <button class="button">3</button>
-                    <button class="button button-gradient">&plus;</button>
-                    <button class="button col-span-2">0</button>
-                    <button class="button">.</button>
-                    <button class="button button-gradient">=</button>
+                <div
+                    class="grid gap-1 grid-cols-4 rounded-lg overflow-hidden keys"
+                >
+                    <button data-value="AC" class="button bg-slate-500/40">
+                        AC
+                    </button>
+                    <button data-value="+/-" class="button bg-slate-500/40">
+                        +/-
+                    </button>
+                    <button data-value="%" class="button bg-slate-500/40">
+                        %
+                    </button>
+                    <button data-value="/" class="button button-gradient">
+                        &div;
+                    </button>
+                    <button data-value="7" class="button">7</button>
+                    <button data-value="8" class="button">8</button>
+                    <button data-value="9" class="button">9</button>
+                    <button data-value="*" class="button button-gradient">
+                        &times;
+                    </button>
+                    <button data-value="4" class="button">4</button>
+                    <button data-value="5" class="button">5</button>
+                    <button data-value="6" class="button">6</button>
+                    <button data-value="-" class="button button-gradient">
+                        &dash;
+                    </button>
+                    <button data-value="1" class="button">1</button>
+                    <button data-value="2" class="button">2</button>
+                    <button data-value="3" class="button">3</button>
+                    <button data-value="+" class="button button-gradient">
+                        &plus;
+                    </button>
+                    <button data-value="0" class="button col-span-2">0</button>
+                    <button data-value="." class="button">.</button>
+                    <button data-value="=" class="button button-gradient">
+                        =
+                    </button>
                 </div>
             </div>
         </main>
