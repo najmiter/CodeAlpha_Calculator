@@ -5,6 +5,7 @@ const operators = ["+", "-", "%", "/", "*"];
 const input = document.querySelector("#input");
 const keys = document.querySelector(".keys");
 const result = document.querySelector("#result");
+const recent = document.querySelector("#recent");
 let hasEvaluated = false;
 
 input.addEventListener("keydown", (e) => e.preventDefault());
@@ -18,10 +19,7 @@ document.addEventListener("keydown", (key) => {
     if (k === "Escape") resetValues();
 
     if (k === "Enter") {
-        result.textContent = eval(
-            input.value.replaceAll("x", "*").replaceAll("÷", "/")
-        );
-        hasEvaluated = true;
+        evalulate();
     } else if (checkKey(k)) {
         input.value += processIntoKey(k);
     }
@@ -33,10 +31,19 @@ keys.addEventListener("click", (click) => {
     if (hasEvaluated && checkDigit(value)) startNewEvaluation();
     if (hasEvaluated && checkOperator(value)) usePreviousResult();
 
-    if (digits.includes(value) || operators.includes(value)) {
+    if (value === "=") evalulate();
+    else if (value === "AC") resetValues();
+    else if (digits.includes(value) || operators.includes(value)) {
         input.value += processIntoKey(value);
     }
 });
+
+function evalulate() {
+    const answer = eval(input.value.replaceAll("x", "*").replaceAll("÷", "/"));
+    result.textContent = answer;
+    recent.textContent = answer;
+    hasEvaluated = true;
+}
 
 function checkDigit(key) {
     return digits.includes(key);

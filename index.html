@@ -11,13 +11,11 @@
         <link href="./src/style.css" rel="stylesheet" />
         <script src="src/main.js" defer></script>
     </head>
-    <body class="dark:bg-slate-950 dark:text-slate-50 cursor-default p-0">
-        <main
-            class="flex flex-col sm:flex-row items-center sm:px-40 sm:py-20 p-5"
-        >
+    <body class="dark:bg-slate-950 dark:text-slate-50 cursor-default">
+        <main class="flex flex-col sm:flex-row items-center sm:px-40 sm:py-20">
             <!-- Calculator -->
             <div
-                class="z-10 relative max-w-lg bg-slate-900 rounded-md p-2 flex flex-col gap-5 overflow-hidden"
+                class="z-10 relative w-full sm:w-[21rem] h-dvh sm:h-fit bg-slate-900 rounded-md p-2 flex flex-col gap-5 justify-between overflow-hidden"
             >
                 <div
                     class="absolute rounded-full w-96 -z-10 pointer-events-none -top-10 -right-10 aspect-square bg-blue-700/20 blur-xl"
@@ -27,13 +25,13 @@
                         class="flex justify-center items-center rounded-lg overflow-hidden"
                     >
                         <h1
-                            class="py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
+                            class="basis-1/2 text-center py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
                             data-active="true"
                         >
                             Calculator
                         </h1>
                         <h1
-                            class="py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
+                            class="basis-1/2 text-center py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
                             data-active="false"
                         >
                             Converter
@@ -41,12 +39,14 @@
                     </div>
                 </header>
                 <!-- Screen -->
-                <div class="flex flex-col items-end">
+                <div
+                    class="flex flex-col justify-between basis-[30%] items-end"
+                >
                     <div
                         class="flex items-center gap-1 rounded-full bg-slate-700/80 py-1 px-3 font-light"
                     >
                         <img src="./src/imgs/recent.svg" alt="" />
-                        <p>123</p>
+                        <p id="recent">Start calulating</p>
                     </div>
                     <div class="max-w-full">
                         <p class="text-4xl my-5 max-w-full" id="result">0</p>
@@ -62,7 +62,7 @@
                 </div>
                 <!-- Buttons -->
                 <div
-                    class="grid gap-1 grid-cols-4 rounded-lg overflow-hidden keys"
+                    class="basis-[55%] grid gap-1 grid-cols-4 rounded-lg overflow-hidden keys"
                 >
                     <button data-value="AC" class="button bg-slate-500/40">
                         AC
