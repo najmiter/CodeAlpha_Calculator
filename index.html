@@ -6,22 +6,28 @@
         <title>Document</title>
         <link href="./src/style.css" rel="stylesheet" />
     </head>
-    <body class="dark:bg-slate-950 dark:text-slate-50">
+    <body class="dark:bg-slate-950 dark:text-slate-50 cursor-default">
         <main class="flex sm:px-40 sm:py-20 p-3">
             <!-- Calculator -->
             <div
-                class="max-w-lg border border-white rounded-md p-2 flex flex-col gap-5"
+                class="z-10 relative max-w-lg bg-slate-900 rounded-md p-2 flex flex-col gap-5 overflow-hidden"
             >
+                <div
+                    class="absolute rounded-full w-96 -z-10 pointer-events-none -top-10 -right-10 aspect-square bg-blue-700/20 blur-xl"
+                ></div>
                 <header>
-                    <div class="flex gap-3 justify-center items-center">
+                    <div
+                        class="flex justify-center items-center rounded-lg overflow-hidden"
+                    >
                         <h1
-                            class="rounded py-2 px-10 data-[active]:bg-blue-600 font-semibold cursor-pointer"
+                            class="py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
                             data-active="true"
                         >
                             Calculator
                         </h1>
                         <h1
-                            class="rounded py-2 px-10 data-[active]:bg-blue-600 data-[active]:font-semibold cursor-pointer"
+                            class="py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
+                            data-active="false"
                         >
                             Converter
                         </h1>
@@ -35,6 +41,37 @@
                         <img src="./src/imgs/recent.svg" alt="" />
                         <p>123</p>
                     </div>
+                    <div>
+                        <p class="text-4xl my-5">12,234</p>
+                    </div>
+                    <div class="w-full">
+                        <input
+                            type="text"
+                            class="w-full rounded-sm bg-slate-600/20 py-3 px-1 outline-none border-none text-right"
+                        />
+                    </div>
+                </div>
+                <!-- Buttons -->
+                <div class="grid gap-1 grid-cols-4 rounded-lg overflow-hidden">
+                    <button class="button bg-slate-500/40">AC</button>
+                    <button class="button bg-slate-500/40">+/-</button>
+                    <button class="button bg-slate-500/40">%</button>
+                    <button class="button button-gradient">&div;</button>
+                    <button class="button">7</button>
+                    <button class="button">8</button>
+                    <button class="button">9</button>
+                    <button class="button button-gradient">&times;</button>
+                    <button class="button">4</button>
+                    <button class="button">5</button>
+                    <button class="button">6</button>
+                    <button class="button button-gradient">&dash;</button>
+                    <button class="button">1</button>
+                    <button class="button">2</button>
+                    <button class="button">3</button>
+                    <button class="button button-gradient">&plus;</button>
+                    <button class="button col-span-2">0</button>
+                    <button class="button">.</button>
+                    <button class="button button-gradient">=</button>
                 </div>
             </div>
         </main>

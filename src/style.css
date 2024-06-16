@@ -553,17 +553,107 @@ video {
   --tw-contain-style:  ;
 }
 
+.button {
+  border-radius: 0.125rem;
+  background-color: rgb(30 41 59 / 0.7);
+  padding: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  transition-property: font;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.button-gradient {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  --tw-gradient-from: #2563eb var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(37 99 235 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #1e40af var(--tw-gradient-to-position);
+}
+
+.button:hover {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.-right-10 {
+  right: -2.5rem;
+}
+
+.-top-10 {
+  top: -2.5rem;
+}
+
+.-z-10 {
+  z-index: -10;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.col-span-2 {
+  -ms-grid-column-span: 2;
+  -ms-grid-column: span 2;
+      grid-column: span 2 / span 2;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .flex {
   display: -ms-flexbox;
   display: flex;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .max-w-lg {
   max-width: 32rem;
 }
 
+.cursor-default {
+  cursor: default;
+}
+
 .cursor-pointer {
   cursor: pointer;
+}
+
+.grid-cols-4 {
+  -ms-grid-columns: (minmax(0, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -590,41 +680,58 @@ video {
   gap: 0.25rem;
 }
 
-.gap-3 {
-  gap: 0.75rem;
-}
-
 .gap-5 {
   gap: 1.25rem;
 }
 
-.rounded {
-  border-radius: 0.25rem;
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .rounded-full {
   border-radius: 9999px;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .rounded-md {
   border-radius: 0.375rem;
 }
 
-.border {
-  border-width: 1px;
+.rounded-sm {
+  border-radius: 0.125rem;
 }
 
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+.border-none {
+  border-style: none;
+}
+
+.bg-blue-700\/20 {
+  background-color: rgb(29 78 216 / 0.2);
+}
+
+.bg-slate-500\/40 {
+  background-color: rgb(100 116 139 / 0.4);
+}
+
+.bg-slate-600\/20 {
+  background-color: rgb(71 85 105 / 0.2);
 }
 
 .bg-slate-700\/80 {
   background-color: rgb(51 65 85 / 0.8);
 }
 
-.bg-slate-100\/80 {
-  background-color: rgb(241 245 249 / 0.8);
+.bg-slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+.bg-slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -633,6 +740,11 @@ video {
 
 .p-3 {
   padding: 0.75rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .px-10 {
@@ -655,20 +767,43 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .font-light {
   font-weight: 300;
 }
 
-.font-semibold {
-  font-weight: 600;
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
-.data-\[active\]\:bg-blue-600[data-active] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+.blur-xl {
+  --tw-blur: blur(24px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.data-\[active\]\:font-semibold[data-active] {
+.data-\[active\=true\]\:button-gradient[data-active=true] {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  --tw-gradient-from: #2563eb var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(37 99 235 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #1e40af var(--tw-gradient-to-position);
+}
+
+.data-\[active\=true\]\:font-semibold[data-active=true] {
   font-weight: 600;
 }
 
