@@ -15,10 +15,10 @@
         <main class="flex flex-col sm:flex-row items-center sm:px-40 sm:py-20">
             <!-- Calculator -->
             <div
-                class="z-10 relative w-full sm:w-[21rem] h-dvh sm:h-fit bg-slate-900 rounded-md p-2 flex flex-col gap-5 justify-between overflow-hidden"
+                class="z-10 relative w-full sm:w-[21rem] h-dvh sm:h-fit bg-slate-900 rounded-md p-2 flex flex-col gap-5 overflow-hidden"
             >
                 <div
-                    class="absolute rounded-full w-96 -z-10 pointer-events-none -top-10 -right-10 aspect-square bg-blue-700/20 blur-xl"
+                    class="absolute rounded-full w-96 -z-10 pointer-events-none -top-10 -right-10 aspect-square bg-blue-700/20 blur-3xl"
                 ></div>
                 <header>
                     <div
@@ -38,67 +38,72 @@
                         </h1>
                     </div>
                 </header>
-                <!-- Screen -->
-                <div
-                    class="flex flex-col justify-between basis-[30%] items-end"
-                >
+                <div class="grid grid-rows-2 gap- h-full">
+                    <!-- Screen -->
+                    <div class="grid items-center">
+                        <div
+                            style="place-self: end; align-self: baseline"
+                            class="flex justify-center items-center gap-1 rounded-full bg-slate-700/80 py-2 px-3 font-light"
+                        >
+                            <img src="./src/imgs/recent.svg" alt="" />
+                            <p id="recent">Start calulating</p>
+                        </div>
+                        <div class="w-full" style="align-self: baseline">
+                            <input
+                                autocomplete="off"
+                                id="input"
+                                type="text"
+                                class="w-full rounded-sm bg-transparent py-3 px-1 outline-none border-none text-right"
+                            />
+                        </div>
+                        <div class="">
+                            <p class="text-4xl my-5 text-right" id="result">
+                                0
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Buttons -->
                     <div
-                        class="flex items-center gap-1 rounded-full bg-slate-700/80 py-1 px-3 font-light"
+                        class="basis-[55%] grid gap-1 grid-cols-4 rounded-lg overflow-hidden keys"
                     >
-                        <img src="./src/imgs/recent.svg" alt="" />
-                        <p id="recent">Start calulating</p>
+                        <button data-value="AC" class="button bg-slate-500/40">
+                            AC
+                        </button>
+                        <button data-value="+/-" class="button bg-slate-500/40">
+                            +/-
+                        </button>
+                        <button data-value="%" class="button bg-slate-500/40">
+                            %
+                        </button>
+                        <button data-value="/" class="button button-gradient">
+                            &div;
+                        </button>
+                        <button data-value="7" class="button">7</button>
+                        <button data-value="8" class="button">8</button>
+                        <button data-value="9" class="button">9</button>
+                        <button data-value="*" class="button button-gradient">
+                            &times;
+                        </button>
+                        <button data-value="4" class="button">4</button>
+                        <button data-value="5" class="button">5</button>
+                        <button data-value="6" class="button">6</button>
+                        <button data-value="-" class="button button-gradient">
+                            &dash;
+                        </button>
+                        <button data-value="1" class="button">1</button>
+                        <button data-value="2" class="button">2</button>
+                        <button data-value="3" class="button">3</button>
+                        <button data-value="+" class="button button-gradient">
+                            &plus;
+                        </button>
+                        <button data-value="0" class="button col-span-2">
+                            0
+                        </button>
+                        <button data-value="." class="button">.</button>
+                        <button data-value="=" class="button button-gradient">
+                            =
+                        </button>
                     </div>
-                    <div class="max-w-full">
-                        <p class="text-4xl my-5 max-w-full" id="result">0</p>
-                    </div>
-                    <div class="w-full">
-                        <input
-                            autocomplete="off"
-                            id="input"
-                            type="text"
-                            class="w-full rounded-sm bg-slate-600/20 py-3 px-1 outline-none border-none text-right"
-                        />
-                    </div>
-                </div>
-                <!-- Buttons -->
-                <div
-                    class="basis-[55%] grid gap-1 grid-cols-4 rounded-lg overflow-hidden keys"
-                >
-                    <button data-value="AC" class="button bg-slate-500/40">
-                        AC
-                    </button>
-                    <button data-value="+/-" class="button bg-slate-500/40">
-                        +/-
-                    </button>
-                    <button data-value="%" class="button bg-slate-500/40">
-                        %
-                    </button>
-                    <button data-value="/" class="button button-gradient">
-                        &div;
-                    </button>
-                    <button data-value="7" class="button">7</button>
-                    <button data-value="8" class="button">8</button>
-                    <button data-value="9" class="button">9</button>
-                    <button data-value="*" class="button button-gradient">
-                        &times;
-                    </button>
-                    <button data-value="4" class="button">4</button>
-                    <button data-value="5" class="button">5</button>
-                    <button data-value="6" class="button">6</button>
-                    <button data-value="-" class="button button-gradient">
-                        &dash;
-                    </button>
-                    <button data-value="1" class="button">1</button>
-                    <button data-value="2" class="button">2</button>
-                    <button data-value="3" class="button">3</button>
-                    <button data-value="+" class="button button-gradient">
-                        &plus;
-                    </button>
-                    <button data-value="0" class="button col-span-2">0</button>
-                    <button data-value="." class="button">.</button>
-                    <button data-value="=" class="button button-gradient">
-                        =
-                    </button>
                 </div>
             </div>
         </main>
