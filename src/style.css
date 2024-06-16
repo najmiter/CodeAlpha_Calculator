@@ -827,6 +827,10 @@ video {
   --tw-gradient-to: #1e40af var(--tw-gradient-to-position);
 }
 
+.data-\[tabActive\=false\]\:hidden[data-tabActive=false] {
+  display: none;
+}
+
 .data-\[active\=true\]\:font-semibold[data-active=true] {
   font-weight: 600;
 }

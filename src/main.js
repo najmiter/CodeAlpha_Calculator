@@ -6,7 +6,19 @@ const input = document.querySelector("#input");
 const keys = document.querySelector(".keys");
 const result = document.querySelector("#result");
 const recent = document.querySelector("#recent");
+const tabBtns = document.querySelectorAll(".tab-btn");
+const tabs = document.querySelectorAll(".tab");
 let hasEvaluated = false;
+
+tabBtns.forEach((btn) => {
+    btn.addEventListener("click", ({ target: clickedBtn }) => {
+        tabBtns.forEach((b) => (b.dataset.active = b === clickedBtn));
+        tabs.forEach((tab) => {
+            tab.dataset.tabactive =
+                tab.dataset.tabname === clickedBtn.dataset.tabname;
+        });
+    });
+});
 
 input.addEventListener("keydown", (e) => e.preventDefault());
 

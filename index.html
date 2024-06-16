@@ -25,20 +25,33 @@
                         class="flex justify-center items-center rounded-lg overflow-hidden"
                     >
                         <h1
-                            class="basis-1/2 text-center py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
+                            class="tab-btn basis-1/2 text-center py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
                             data-active="true"
+                            data-tabName="calculator"
                         >
                             Calculator
                         </h1>
                         <h1
-                            class="basis-1/2 text-center py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
+                            class="tab-btn basis-1/2 text-center py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
                             data-active="false"
+                            data-tabName="converter"
                         >
                             Converter
                         </h1>
                     </div>
                 </header>
-                <div class="grid grid-rows-2 gap- h-full">
+                <div
+                    data-tabName="converter"
+                    data-tabActive="false"
+                    class="tab data-[tabActive=false]:hidden"
+                >
+                    This is the converter tab.
+                </div>
+                <div
+                    data-tabName="calculator"
+                    class="grid grid-rows-2 gap- h-full tab data-[tabActive=false]:hidden"
+                    data-tabActive="true"
+                >
                     <!-- Screen -->
                     <div class="grid items-center">
                         <div
