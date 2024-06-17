@@ -38,7 +38,7 @@ document.addEventListener("keydown", (key) => {
 
     if (k === "Enter") {
         evalulate();
-        startNewEvaluation();
+        input.textContent = "";
     }
 });
 
@@ -52,7 +52,7 @@ keys.addEventListener("click", (click) => {
 
     if (value === "=") {
         evalulate();
-        startNewEvaluation();
+        input.textContent = "";
     } else if (value === "AC") resetValues();
     else if (digits.includes(value) || operators.includes(value)) {
         input.textContent += processIntoKey(value);
