@@ -49,23 +49,21 @@
                         <h1>Recent acitivity</h1>
                         <div
                             style="display: none"
-                            class="flex justify-between p-5 bg-slate-900 rounded-sm"
+                            class="flex gap-2 justify-between p-5 bg-slate-900 rounded-sm"
                         >
                             <h2
                                 class="font-mono text-2xl space-y-2 max-w-[60%] overflow-scroll text-wrap"
                             >
-                                <p>99+672394832948230992103821908390213</p>
-                                <p class="text-blue-500">=166</p>
+                                <p></p>
+                                <p class="text-blue-500"></p>
                             </h2>
-                            <h4 class="text-blue-300/50">
-                                07:13 PM Jun 17, 2024
-                            </h4>
+                            <h4 class="text-blue-300/50"></h4>
                         </div>
                     </div>
                 </div>
                 <div
                     data-tabName="calculator"
-                    class="flex flex-col h-[calc(100vh-40px)] sm:h-fit tab data-[tabActive=false]:hidden"
+                    class="flex flex-col h-[calc(100vh-30px)] sm:h-fit tab data-[tabActive=false]:hidden"
                     data-tabActive="true"
                 >
                     <!-- Screen -->
@@ -78,13 +76,13 @@
                             <p id="recent">Start calulating</p>
                         </div>
                         <div
-                            class="relative flex flex-col gap-5 justify-between py-5 text-4xl"
+                            class="relative flex flex-col gap-5 justify-between py-5 text-4xl overflow-x-auto"
                         >
                             <div
                                 id="input"
                                 contenteditable
                                 spellcheck="false"
-                                class="w-full cursor-text rounded-sm bg-transparent py-3 px-1 outline-none border-none text-right"
+                                class="max-w-full h-14 overflow-scroll cursor-text rounded-sm bg-transparent py-3 px-1 outline-none border-none text-right"
                             ></div>
                             <p
                                 id="result"

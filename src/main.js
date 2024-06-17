@@ -111,7 +111,7 @@ function createHistoryRecord(statement, answer, at) {
     const div = document.createElement("div");
     div.setAttribute(
         "class",
-        "flex justify-between p-5 bg-slate-900 rounded-sm"
+        "flex gap-2 justify-between p-5 bg-slate-900 rounded-sm"
     );
 
     div.innerHTML = `
