@@ -9,6 +9,7 @@ const recent = document.querySelector("#recent");
 const tabBtns = document.querySelectorAll(".tab-btn");
 const tabs = document.querySelectorAll(".tab");
 let hasEvaluated = false;
+let resultCopy;
 
 tabBtns.forEach((btn) =>
     btn.addEventListener("click", ({ target: clickedBtn }) => {

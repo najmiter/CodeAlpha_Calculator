@@ -15,7 +15,7 @@
         <main class="flex flex-col sm:flex-row items-center sm:px-40 sm:py-20">
             <!-- Calculator -->
             <div
-                class="z-10 relative w-full sm:w-[21rem] h-dvh sm:h-fit bg-slate-900 rounded-md p-2 flex flex-col gap-5 overflow-hidden"
+                class="z-10 relative w-full max-h-dvh sm:w-[21rem] bg-slate-900 rounded-md p-2 flex flex-col gap-5 overflow-hidden"
             >
                 <div
                     class="absolute rounded-full w-96 -z-10 pointer-events-none -top-10 -right-10 aspect-square bg-blue-700/20 blur-3xl"
@@ -49,40 +49,34 @@
                 </div>
                 <div
                     data-tabName="calculator"
-                    class="grid grid-rows-2 gap- h-full tab data-[tabActive=false]:hidden"
+                    class="grid grid-rows-[1fr,2fr] h-dvh sm:h-fit tab data-[tabActive=false]:hidden"
                     data-tabActive="true"
                 >
                     <!-- Screen -->
-                    <div class="grid items-center grid-rows-[60px,1fr]">
+                    <div class="grid">
                         <div
-                            style="place-self: end; align-self: baseline"
+                            style="align-self: baseline; justify-self: end"
                             class="flex justify-center items-center gap-1 rounded-full bg-slate-700/80 py-2 px-3 font-light"
                         >
                             <img src="./src/imgs/recent.svg" alt="" />
                             <p id="recent">Start calulating</p>
                         </div>
-                        <div class="flex flex-col justify-around h-full">
-                            <div class="w-full">
-                                <div
-                                    contenteditable
-                                    spellcheck="false"
-                                    id="input"
-                                    class="w-full cursor-text text-4xl rounded-sm bg-transparent py-3 px-1 outline-none border-none text-right"
-                                ></div>
-                            </div>
-                            <div class="">
-                                <p
-                                    class="text-4xl text-right opacity-50"
-                                    id="result"
-                                >
-                                    0
-                                </p>
-                            </div>
+                        <div
+                            class="relative flex flex-col gap-5 justify-between py-5 text-4xl"
+                        >
+                            <div
+                                id="input"
+                                contenteditable
+                                spellcheck="false"
+                                class="w-full cursor-text rounded-sm bg-transparent py-3 px-1 outline-none border-none text-right"
+                            ></div>
+                            <p id="result" class="text-right opacity-50">0</p>
+                            <!-- <p class="absolute top-[0%] right-0 py-8 px-1">0</p> -->
                         </div>
                     </div>
                     <!-- Buttons -->
                     <div
-                        class="basis-[55%] grid gap-1 grid-cols-4 rounded-lg overflow-hidden keys"
+                        class="mt-auto grid gap-1 grid-cols-4 grid-rows-5 rounded-lg overflow-hidden keys"
                     >
                         <button data-value="AC" class="button bg-slate-500/40">
                             AC
@@ -114,7 +108,10 @@
                         <button data-value="+" class="button button-gradient">
                             &plus;
                         </button>
-                        <button data-value="0" class="button col-span-2">
+                        <button
+                            data-value="0"
+                            class="button col-span-2 aspect-auto"
+                        >
                             0
                         </button>
                         <button data-value="." class="button">.</button>
