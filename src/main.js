@@ -51,7 +51,6 @@ keys.addEventListener("click", (click) => {
 
     if (value === "=") {
         evalulate();
-        input.textContent = "";
     } else if (value === "AC") resetValues();
     else if (digits.includes(value) || operators.includes(value)) {
         input.textContent += value;
@@ -64,8 +63,33 @@ function evalulate(submit = true) {
         const answer = +eval(
             input.textContent.replaceAll("x", "*").replaceAll("÷", "/")
         ).toFixed(10);
+        result.style.opacity = 0.5;
         result.textContent = answer;
-        if (submit) recent.textContent = answer;
+
+        if (submit) {
+            const holder = document.querySelector("#answer-animator");
+            recent.textContent = answer;
+            holder.textContent = answer;
+            holder.classList.add("animate-in");
+            result.style.opacity = 0;
+
+            input.textContent = "";
+            setTimeout(() => {
+                input.textContent += answer;
+                holder.textContent = "";
+                holder.style.top = "45%";
+                holder.classList.remove("animate-in");
+
+                const selectedText = window.getSelection();
+                const selectedRange = document.createRange();
+
+                selectedRange.setStart(input, 1);
+                selectedRange.collapse(true);
+                selectedText.removeAllRanges();
+                selectedText.addRange(selectedRange);
+                input.focus();
+            }, 200);
+        }
         hasEvaluated = submit;
     } catch {}
 }
@@ -93,7 +117,7 @@ function startNewEvaluation() {
 }
 
 function usePreviousResult() {
-    input.textContent = result.textContent;
+    input.textContent = recent.textContent;
     hasEvaluated = false;
 }
 

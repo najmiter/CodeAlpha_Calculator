@@ -612,8 +612,8 @@ video {
   right: 0px;
 }
 
-.top-\[0\%\] {
-  top: 0%;
+.top-\[45\%\] {
+  top: 45%;
 }
 
 .-z-10 {
@@ -670,6 +670,20 @@ video {
 .basis-\[49\.2\%\] {
   -ms-flex-preferred-size: 49.2%;
       flex-basis: 49.2%;
+}
+
+@keyframes in {
+  from {
+    top: 45%;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+.animate-in {
+  animation: in 200ms ease-in forwards;
 }
 
 .cursor-default {
@@ -841,6 +855,10 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
 .data-\[active\=true\]\:button-gradient[data-active=true] {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
   --tw-gradient-from: #2563eb var(--tw-gradient-from-position);
@@ -865,26 +883,6 @@ video {
 
   .sm\:w-\[20rem\] {
     width: 20rem;
-  }
-
-  .sm\:basis-\[41\%\] {
-    -ms-flex-preferred-size: 41%;
-        flex-basis: 41%;
-  }
-
-  .sm\:basis-\[45\%\] {
-    -ms-flex-preferred-size: 45%;
-        flex-basis: 45%;
-  }
-
-  .sm\:basis-\[46\%\] {
-    -ms-flex-preferred-size: 46%;
-        flex-basis: 46%;
-  }
-
-  .sm\:basis-\[48\%\] {
-    -ms-flex-preferred-size: 48%;
-        flex-basis: 48%;
   }
 
   .sm\:basis-\[47\%\] {
