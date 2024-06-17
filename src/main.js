@@ -9,6 +9,7 @@ const recent = document.querySelector("#recent");
 const tabBtns = document.querySelectorAll(".tab-btn");
 const tabs = document.querySelectorAll(".tab");
 let hasEvaluated = false;
+const records = [];
 
 tabBtns.forEach((btn) =>
     btn.addEventListener("click", ({ target: clickedBtn }) => {
@@ -65,7 +66,19 @@ function evalulate(submit = true) {
         result.textContent = answer;
 
         if (submit) {
-            createHistoryRecord(input.textContent, answer);
+            saveToLocalStorage(
+                input.textContent,
+                answer,
+                new Date().toLocaleDateString("en-us", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                })
+            );
+            createAndAppendRecords();
 
             const holder = document.querySelector("#answer-animator");
             recent.textContent = answer;
@@ -94,7 +107,7 @@ function evalulate(submit = true) {
     } catch {}
 }
 
-function createHistoryRecord(statement, answer) {
+function createHistoryRecord(statement, answer, at) {
     const div = document.createElement("div");
     div.setAttribute(
         "class",
@@ -109,10 +122,28 @@ function createHistoryRecord(statement, answer) {
             <p class="text-blue-500">=${answer}</p>
         </h2>
         <h4 class="text-blue-300/50">
-            07:13 PM Jun 17, 2024
+            ${at}
         </h4>
     `;
     document.querySelector("#history").appendChild(div);
+}
+
+function saveToLocalStorage(statement, answer, at) {
+    records.unshift({
+        statement,
+        answer,
+        at,
+    });
+
+    localStorage.setItem("calculator_RECORDS", JSON.stringify(records));
+}
+
+function createAndAppendRecords() {
+    const his = document.querySelector("#history");
+    his.innerHTML = "<h1>Recent acitivity</h1>";
+    for (const { statement, answer, at } of records) {
+        createHistoryRecord(statement, answer, at);
+    }
 }
 
 function checkDigit(key) {
@@ -142,6 +173,13 @@ function usePreviousResult() {
     hasEvaluated = false;
 }
 
+function readLocalStorage() {
+    const recs = localStorage.getItem("calculator_RECORDS");
+    if (recs) records.push(...JSON.parse(recs));
+
+    createAndAppendRecords();
+}
+
 async function thing(answer = 100) {
     for (let i = 0; i < answer; i++) {
         await new Promise((res) => setTimeout(res, 1));
@@ -150,3 +188,5 @@ async function thing(answer = 100) {
 }
 
 // thing();
+
+readLocalStorage();
