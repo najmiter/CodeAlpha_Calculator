@@ -15,7 +15,7 @@
         <main class="flex flex-col sm:flex-row items-center sm:px-40 sm:py-20">
             <!-- Calculator -->
             <div
-                class="z-10 relative w-full max-h-dvh sm:w-[21rem] bg-slate-900 rounded-md p-2 flex flex-col gap-5 overflow-hidden"
+                class="z-10 relative w-full max-h-dvh sm:w-[21rem] bg-slate-900 rounded-md p-2 flex flex-col gap-5 overflow-x-hidden"
             >
                 <div
                     class="absolute rounded-full w-96 -z-10 pointer-events-none -top-10 -right-10 aspect-square bg-blue-700/20 blur-3xl"
@@ -49,7 +49,7 @@
                 </div>
                 <div
                     data-tabName="calculator"
-                    class="grid grid-rows-[1fr,2fr] h-fit sm:h-fit tab data-[tabActive=false]:hidden"
+                    class="flex flex-col h-[calc(100vh-40px)] sm:h-fit tab data-[tabActive=false]:hidden"
                     data-tabActive="true"
                 >
                     <!-- Screen -->
@@ -76,7 +76,7 @@
                     </div>
                     <!-- Buttons -->
                     <div
-                        class="mt-auto grid gap-1 grid-cols-4 grid-rows-5 rounded-lg overflow-hidden keys"
+                        class="mt-auto flex flex-wrap gap-1 justify-center rounded-lg overflow-hidden keys"
                     >
                         <button data-value="AC" class="button bg-slate-500/40">
                             AC
@@ -110,7 +110,7 @@
                         </button>
                         <button
                             data-value="0"
-                            class="button col-span-2 aspect-auto"
+                            class="button basis-[49.2%] aspect-auto"
                         >
                             0
                         </button>
