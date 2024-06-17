@@ -567,6 +567,13 @@ video {
   transition-duration: 200ms;
 }
 
+@media (min-width: 640px) {
+  .button {
+    -ms-flex-preferred-size: 23%;
+        flex-basis: 23%;
+  }
+}
+
 .button-gradient {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
   --tw-gradient-from: #2563eb var(--tw-gradient-from-position);
@@ -856,8 +863,33 @@ video {
     height: fit-content;
   }
 
-  .sm\:w-\[21rem\] {
-    width: 21rem;
+  .sm\:w-\[20rem\] {
+    width: 20rem;
+  }
+
+  .sm\:basis-\[41\%\] {
+    -ms-flex-preferred-size: 41%;
+        flex-basis: 41%;
+  }
+
+  .sm\:basis-\[45\%\] {
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+  }
+
+  .sm\:basis-\[46\%\] {
+    -ms-flex-preferred-size: 46%;
+        flex-basis: 46%;
+  }
+
+  .sm\:basis-\[48\%\] {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+  }
+
+  .sm\:basis-\[47\%\] {
+    -ms-flex-preferred-size: 47%;
+        flex-basis: 47%;
   }
 
   .sm\:flex-row {
@@ -870,9 +902,9 @@ video {
     padding-right: 10rem;
   }
 
-  .sm\:py-20 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  .sm\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 }
 

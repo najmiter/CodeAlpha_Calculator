@@ -9,7 +9,6 @@ const recent = document.querySelector("#recent");
 const tabBtns = document.querySelectorAll(".tab-btn");
 const tabs = document.querySelectorAll(".tab");
 let hasEvaluated = false;
-let resultCopy;
 
 tabBtns.forEach((btn) =>
     btn.addEventListener("click", ({ target: clickedBtn }) => {
@@ -55,7 +54,7 @@ keys.addEventListener("click", (click) => {
         input.textContent = "";
     } else if (value === "AC") resetValues();
     else if (digits.includes(value) || operators.includes(value)) {
-        input.textContent += processIntoKey(value);
+        input.textContent += value;
         if (digits.includes(value)) evalulate(false);
     }
 });
@@ -81,12 +80,6 @@ function checkOperator(key) {
 
 function checkKey(key) {
     return digits.includes(key) || operators.includes(key);
-}
-
-function processIntoKey(key) {
-    if (key === "*") return " x ";
-    if (key === "/") return " ÷ ";
-    return key;
 }
 
 function resetValues() {
