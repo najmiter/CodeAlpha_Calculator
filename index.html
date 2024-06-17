@@ -62,15 +62,18 @@
                             <p id="recent">Start calulating</p>
                         </div>
                         <div class="w-full" style="align-self: baseline">
-                            <input
-                                autocomplete="off"
+                            <div
+                                contenteditable
+                                spellcheck="false"
                                 id="input"
-                                type="text"
-                                class="w-full rounded-sm bg-transparent py-3 px-1 outline-none border-none text-right"
-                            />
+                                class="w-full cursor-text text-4xl rounded-sm bg-transparent py-3 px-1 outline-none border-none text-right"
+                            ></div>
                         </div>
                         <div class="">
-                            <p class="text-4xl my-5 text-right" id="result">
+                            <p
+                                class="text-4xl my-5 text-right opacity-50"
+                                id="result"
+                            >
                                 0
                             </p>
                         </div>

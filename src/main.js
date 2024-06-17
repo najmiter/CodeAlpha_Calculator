@@ -20,41 +20,40 @@ tabBtns.forEach((btn) => {
     });
 });
 
-input.addEventListener("keydown", (e) => e.preventDefault());
-
-document.addEventListener("keydown", (key) => {
-    const { key: k } = key;
-
-    if (hasEvaluated && checkDigit(k)) startNewEvaluation();
-    if (hasEvaluated && checkOperator(k)) usePreviousResult();
-
-    if (k === "Escape") resetValues();
-
-    if (k === "Enter") {
-        evalulate();
-    } else if (checkKey(k)) {
-        input.value += processIntoKey(k);
-    }
+input.addEventListener("input", (e) => {
+    input.textContent = input.textContent.replaceAll(/\n|\t/g, "");
+    evalulate(false);
 });
+
+document.addEventListener("keydown", documentKeydownHandler);
 
 keys.addEventListener("click", (click) => {
     const value = click.target.dataset.value;
 
+    if (!value) return;
+
     if (hasEvaluated && checkDigit(value)) startNewEvaluation();
     if (hasEvaluated && checkOperator(value)) usePreviousResult();
 
-    if (value === "=") evalulate();
-    else if (value === "AC") resetValues();
+    if (value === "=") {
+        evalulate();
+        startNewEvaluation();
+    } else if (value === "AC") resetValues();
     else if (digits.includes(value) || operators.includes(value)) {
-        input.value += processIntoKey(value);
+        input.textContent += processIntoKey(value);
+        if (digits.includes(value)) evalulate(false);
     }
 });
 
-function evalulate() {
-    const answer = eval(input.value.replaceAll("x", "*").replaceAll("÷", "/"));
-    result.textContent = answer;
-    recent.textContent = answer;
-    hasEvaluated = true;
+function evalulate(submit = true) {
+    try {
+        const answer = +eval(
+            input.textContent.replaceAll("x", "*").replaceAll("÷", "/")
+        ).toFixed(10);
+        result.textContent = answer;
+        if (submit) recent.textContent = answer;
+        hasEvaluated = submit;
+    } catch {}
 }
 
 function checkDigit(key) {
@@ -76,16 +75,44 @@ function processIntoKey(key) {
 }
 
 function resetValues() {
-    input.value = "";
+    input.textContent = "";
     result.textContent = "0";
 }
 
 function startNewEvaluation() {
-    input.value = "";
+    input.textContent = "";
     hasEvaluated = false;
 }
 
 function usePreviousResult() {
-    input.value = result.textContent;
+    input.textContent = result.textContent;
     hasEvaluated = false;
 }
+
+function documentKeydownHandler(key) {
+    const { key: k } = key;
+    if (digits.includes(k) || operators.includes(k)) input.focus();
+
+    if (hasEvaluated && checkDigit(k)) startNewEvaluation();
+    if (hasEvaluated && checkOperator(k)) usePreviousResult();
+
+    if (k === "Escape") resetValues();
+
+    if (k === "Enter") {
+        evalulate();
+        startNewEvaluation();
+    } else if (checkKey(k)) {
+        // input.textContent += processIntoKey(k);
+        // const val = input.textContent.trim();
+        // if (digits.includes(val.charAt(val.length - 1))) evalulate(false);
+    }
+}
+
+async function thing(answer = 100) {
+    for (let i = 0; i < answer; i++) {
+        await new Promise((res) => setTimeout(res, 1));
+        input.textContent = i;
+    }
+}
+
+// thing();

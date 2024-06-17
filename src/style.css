@@ -665,6 +665,10 @@ video {
   cursor: pointer;
 }
 
+.cursor-text {
+  cursor: text;
+}
+
 .grid-cols-4 {
   -ms-grid-columns: (minmax(0, 1fr))[4];
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -720,11 +724,6 @@ video {
 
 .border-none {
   border-style: none;
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-blue-700\/20 {
@@ -799,19 +798,17 @@ video {
   font-weight: 300;
 }
 
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.blur-xl {
-  --tw-blur: blur(24px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.blur-2xl {
-  --tw-blur: blur(40px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .blur-3xl {
