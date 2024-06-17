@@ -10,22 +10,36 @@ const tabBtns = document.querySelectorAll(".tab-btn");
 const tabs = document.querySelectorAll(".tab");
 let hasEvaluated = false;
 
-tabBtns.forEach((btn) => {
+tabBtns.forEach((btn) =>
     btn.addEventListener("click", ({ target: clickedBtn }) => {
         tabBtns.forEach((b) => (b.dataset.active = b === clickedBtn));
-        tabs.forEach((tab) => {
-            tab.dataset.tabactive =
-                tab.dataset.tabname === clickedBtn.dataset.tabname;
-        });
-    });
-});
+        tabs.forEach(
+            (tab) =>
+                (tab.dataset.tabactive =
+                    tab.dataset.tabname === clickedBtn.dataset.tabname)
+        );
+    })
+);
 
-input.addEventListener("input", (e) => {
+input.addEventListener("input", () => {
     input.textContent = input.textContent.replaceAll(/\n|\t/g, "");
     evalulate(false);
 });
 
-document.addEventListener("keydown", documentKeydownHandler);
+document.addEventListener("keydown", (key) => {
+    const { key: k } = key;
+    if (digits.includes(k) || operators.includes(k)) input.focus();
+
+    if (hasEvaluated && checkDigit(k)) startNewEvaluation();
+    if (hasEvaluated && checkOperator(k)) usePreviousResult();
+
+    if (k === "Escape") resetValues();
+
+    if (k === "Enter") {
+        evalulate();
+        startNewEvaluation();
+    }
+});
 
 keys.addEventListener("click", (click) => {
     const value = click.target.dataset.value;
@@ -87,25 +101,6 @@ function startNewEvaluation() {
 function usePreviousResult() {
     input.textContent = result.textContent;
     hasEvaluated = false;
-}
-
-function documentKeydownHandler(key) {
-    const { key: k } = key;
-    if (digits.includes(k) || operators.includes(k)) input.focus();
-
-    if (hasEvaluated && checkDigit(k)) startNewEvaluation();
-    if (hasEvaluated && checkOperator(k)) usePreviousResult();
-
-    if (k === "Escape") resetValues();
-
-    if (k === "Enter") {
-        evalulate();
-        startNewEvaluation();
-    } else if (checkKey(k)) {
-        // input.textContent += processIntoKey(k);
-        // const val = input.textContent.trim();
-        // if (digits.includes(val.charAt(val.length - 1))) evalulate(false);
-    }
 }
 
 async function thing(answer = 100) {

@@ -53,7 +53,7 @@
                     data-tabActive="true"
                 >
                     <!-- Screen -->
-                    <div class="grid items-center">
+                    <div class="grid items-center grid-rows-[60px,1fr]">
                         <div
                             style="place-self: end; align-self: baseline"
                             class="flex justify-center items-center gap-1 rounded-full bg-slate-700/80 py-2 px-3 font-light"
@@ -61,21 +61,23 @@
                             <img src="./src/imgs/recent.svg" alt="" />
                             <p id="recent">Start calulating</p>
                         </div>
-                        <div class="w-full" style="align-self: baseline">
-                            <div
-                                contenteditable
-                                spellcheck="false"
-                                id="input"
-                                class="w-full cursor-text text-4xl rounded-sm bg-transparent py-3 px-1 outline-none border-none text-right"
-                            ></div>
-                        </div>
-                        <div class="">
-                            <p
-                                class="text-4xl my-5 text-right opacity-50"
-                                id="result"
-                            >
-                                0
-                            </p>
+                        <div class="flex flex-col justify-around h-full">
+                            <div class="w-full">
+                                <div
+                                    contenteditable
+                                    spellcheck="false"
+                                    id="input"
+                                    class="w-full cursor-text text-4xl rounded-sm bg-transparent py-3 px-1 outline-none border-none text-right"
+                                ></div>
+                            </div>
+                            <div class="">
+                                <p
+                                    class="text-4xl text-right opacity-50"
+                                    id="result"
+                                >
+                                    0
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <!-- Buttons -->
