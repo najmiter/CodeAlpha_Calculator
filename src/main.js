@@ -60,9 +60,7 @@ keys.addEventListener("click", (click) => {
 
 function evalulate(submit = true) {
     try {
-        const answer = +eval(
-            input.textContent.replaceAll("x", "*").replaceAll("÷", "/")
-        ).toFixed(10);
+        const answer = +eval(input.textContent).toFixed(10);
         result.style.opacity = 0.5;
         result.textContent = answer;
 
