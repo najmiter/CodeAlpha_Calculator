@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="color-scheme: dark">
     <head>
         <meta charset="UTF-8" />
         <link
@@ -15,42 +15,58 @@
         <main class="flex flex-col sm:flex-row items-center sm:px-40 sm:py-10">
             <!-- Calculator -->
             <div
-                class="z-10 relative w-full max-h-dvh sm:w-[20rem] bg-slate-900 rounded-md p-2 flex flex-col gap-5 overflow-x-hidden"
+                class="z-10 relative w-full max-h-dvh sm:w-[25rem] bg-slate-900 rounded-md p-2 flex flex-col gap-5 overflow-x-hidden"
             >
                 <div
                     class="absolute rounded-full w-96 -z-10 pointer-events-none -top-10 -right-10 aspect-square bg-blue-700/20 blur-3xl"
                 ></div>
-                <header>
+                <header class="select-none">
                     <div
                         class="flex justify-center items-center rounded-lg overflow-hidden"
                     >
                         <h1
                             class="tab-btn basis-1/2 text-center py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
-                            data-active="true"
+                            data-active="false"
                             data-tabName="calculator"
                         >
                             Calculator
                         </h1>
                         <h1
                             class="tab-btn basis-1/2 text-center py-2 px-10 bg-slate-800 data-[active=true]:button-gradient data-[active=true]:font-semibold cursor-pointer"
-                            data-active="false"
-                            data-tabName="converter"
+                            data-active="true"
+                            data-tabName="history"
                         >
-                            Converter
+                            History
                         </h1>
                     </div>
                 </header>
                 <div
-                    data-tabName="converter"
-                    data-tabActive="false"
+                    data-tabName="history"
+                    data-tabActive="true"
                     class="tab data-[tabActive=false]:hidden"
                 >
-                    This is the converter tab.
+                    <div id="history" class="flex flex-col gap-3">
+                        <h1>Recent acitivity</h1>
+                        <div
+                            style="display: none"
+                            class="flex justify-between p-5 bg-slate-900 rounded-sm"
+                        >
+                            <h2
+                                class="font-mono text-2xl space-y-2 max-w-[60%] overflow-scroll text-wrap"
+                            >
+                                <p>99+672394832948230992103821908390213</p>
+                                <p class="text-blue-500">=166</p>
+                            </h2>
+                            <h4 class="text-blue-300/50">
+                                07:13 PM Jun 17, 2024
+                            </h4>
+                        </div>
+                    </div>
                 </div>
                 <div
                     data-tabName="calculator"
                     class="flex flex-col h-[calc(100vh-40px)] sm:h-fit tab data-[tabActive=false]:hidden"
-                    data-tabActive="true"
+                    data-tabActive="false"
                 >
                     <!-- Screen -->
                     <div class="grid">

@@ -650,6 +650,10 @@ video {
   height: calc(100vh - 40px);
 }
 
+.h-dvh {
+  height: 100dvh;
+}
+
 .max-h-dvh {
   max-height: 100dvh;
 }
@@ -660,6 +664,14 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.max-w-\[60\%\] {
+  max-width: 60%;
 }
 
 .basis-1\/2 {
@@ -698,6 +710,18 @@ video {
   cursor: text;
 }
 
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.appearance-none {
+  -moz-appearance: none;
+       appearance: none;
+}
+
 .flex-col {
   -ms-flex-direction: column;
       flex-direction: column;
@@ -731,12 +755,38 @@ video {
   gap: 1.25rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
 
+.overflow-clip {
+  overflow: clip;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.text-wrap {
+  text-wrap: wrap;
 }
 
 .rounded-full {
@@ -789,6 +839,14 @@ video {
   padding: 0.5rem;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -824,6 +882,11 @@ video {
   padding-bottom: 2rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -832,13 +895,49 @@ video {
   text-align: right;
 }
 
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .font-light {
   font-weight: 300;
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-blue-800 {
+  --tw-text-opacity: 1;
+  color: rgb(30 64 175 / var(--tw-text-opacity));
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.text-blue-600\/50 {
+  color: rgb(37 99 235 / 0.5);
+}
+
+.text-blue-400\/50 {
+  color: rgb(96 165 250 / 0.5);
+}
+
+.text-blue-300\/50 {
+  color: rgb(147 197 253 / 0.5);
 }
 
 .opacity-50 {
@@ -883,6 +982,10 @@ video {
 
   .sm\:w-\[20rem\] {
     width: 20rem;
+  }
+
+  .sm\:w-\[25rem\] {
+    width: 25rem;
   }
 
   .sm\:basis-\[47\%\] {

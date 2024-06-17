@@ -65,6 +65,8 @@ function evalulate(submit = true) {
         result.textContent = answer;
 
         if (submit) {
+            createHistoryRecord(input.textContent, answer);
+
             const holder = document.querySelector("#answer-animator");
             recent.textContent = answer;
             holder.textContent = answer;
@@ -90,6 +92,27 @@ function evalulate(submit = true) {
         }
         hasEvaluated = submit;
     } catch {}
+}
+
+function createHistoryRecord(statement, answer) {
+    const div = document.createElement("div");
+    div.setAttribute(
+        "class",
+        "flex justify-between p-5 bg-slate-900 rounded-sm"
+    );
+
+    div.innerHTML = `
+        <h2
+            class="font-mono text-2xl space-y-2 max-w-[60%] overflow-scroll text-wrap"
+        >
+            <p>${statement}</p>
+            <p class="text-blue-500">=${answer}</p>
+        </h2>
+        <h4 class="text-blue-300/50">
+            07:13 PM Jun 17, 2024
+        </h4>
+    `;
+    document.querySelector("#history").appendChild(div);
 }
 
 function checkDigit(key) {
