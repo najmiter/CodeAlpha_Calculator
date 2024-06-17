@@ -177,6 +177,10 @@ function readLocalStorage() {
     const recs = localStorage.getItem("calculator_RECORDS");
     if (recs) records.push(...JSON.parse(recs));
 
+    if (records.length > 0) {
+        recent.textContent = records.at(0).answer;
+    }
+
     createAndAppendRecords();
 }
 
