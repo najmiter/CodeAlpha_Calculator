@@ -12,7 +12,7 @@
         <script src="src/main.js" defer></script>
     </head>
     <body class="dark:bg-slate-950 dark:text-slate-50 cursor-default">
-        <main class="flex flex-col sm:flex-row items-center sm:px-40 sm:py-10">
+        <main class="flex flex-col gap-5 sm:flex-row sm:px-40 sm:py-10">
             <!-- Calculator -->
             <div
                 class="z-10 relative w-full max-h-dvh sm:w-[25rem] bg-slate-900 rounded-md p-2 flex flex-col gap-5 overflow-x-hidden"
@@ -146,6 +146,41 @@
                     </div>
                 </div>
             </div>
+
+            <article
+                class="hidden sm:block px-10 text-slate-300 space-y-5 w-full"
+            >
+                <h1 class="text-2xl mb-7 font-bold">Features</h1>
+                <p class="">
+                    This simple app has got a few of the following features as
+                    of now
+                </p>
+                <ol class="list-decimal ml-10 space-y-2 font-light">
+                    <li>Show previous result (if any).</li>
+                    <li>
+                        Play nice little animation when the statement is
+                        submitted.
+                    </li>
+                    <li>
+                        Keep <strong class="font-medium">all</strong> the
+                        records stored in the <code>localStorage</code>.
+                    </li>
+                    <li>
+                        Use the previous result if you press any operator key
+                        after evaluating a statement.
+                    </li>
+                    <li>
+                        Clear the input if you press any numeric key after an
+                        evaluation had been done.
+                    </li>
+                </ol>
+                <div class="flex justify-end pr-10 relative">
+                    <img width="300" src="./src/imgs/book.png" alt="a book" />
+                    <div
+                        class="w-72 aspect-square absolute top-10 right-0 -z-10 bg-blue-400/40 blur-3xl"
+                    ></div>
+                </div>
+            </article>
         </main>
     </body>
 </html>
