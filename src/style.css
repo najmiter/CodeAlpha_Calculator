@@ -684,6 +684,10 @@ video {
   max-height: 100dvh;
 }
 
+.max-h-screen {
+  max-height: 100vh;
+}
+
 .w-96 {
   width: 24rem;
 }
@@ -872,8 +876,16 @@ video {
   border-radius: 0.125rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-none {
   border-style: none;
+}
+
+.border-slate-500\/30 {
+  border-color: rgb(100 116 139 / 0.3);
 }
 
 .bg-blue-700\/20 {

@@ -45,11 +45,14 @@
                     data-tabActive="false"
                     class="tab data-[tabActive=false]:hidden"
                 >
-                    <div id="history" class="flex flex-col gap-3">
+                    <div
+                        id="history"
+                        class="flex flex-col gap-3 max-h-screen overflow-scroll"
+                    >
                         <h1>Recent acitivity</h1>
                         <div
                             style="display: none"
-                            class="flex gap-2 justify-between p-5 bg-slate-900 rounded-sm"
+                            class="flex border border-slate-500/30 gap-2 justify-between p-5 bg-slate-900 rounded-md"
                         >
                             <h2
                                 class="font-mono text-2xl space-y-2 max-w-[60%] overflow-scroll text-wrap"
